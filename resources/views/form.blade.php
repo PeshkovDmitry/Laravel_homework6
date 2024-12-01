@@ -1,5 +1,6 @@
 <html>
     <form action="" method="post">
+        @csrf
         <div>
             <label for="title">Название</label>
             <input type="text" name="title" id="title" required>
