@@ -18,4 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/index', [BookController::class, "index"]);
+Route::get('/index', [BookController::class, "index"]) -> name('bookForm');
+
+Route::post('/store', [BookController::class, "store"]) -> name('bookStore');

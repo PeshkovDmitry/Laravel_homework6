@@ -1,13 +1,25 @@
+<!doctype html>
 <html>
-    <form action="" method="post">
+    @if ($errors->any()) 
+        <div>
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>
+                        {{ $error }}
+                    </li>
+                @endforeach
+            </ul>    
+        </div>
+    @endif
+    <form action="{{ Route('bookStore') }}" method="post">
         @csrf
         <div>
             <label for="title">Название</label>
-            <input type="text" name="title" id="title" required>
+            <input type="text" name="title" id="title">
         </div>
         <div>
-            <label for="author">Название</label>
-            <input type="text" name="author" id="author" required>
+            <label for="author">Автор</label>
+            <input type="text" name="author" id="author">
         </div>
         <div>
             <label for="genre">Жанр</label>    
